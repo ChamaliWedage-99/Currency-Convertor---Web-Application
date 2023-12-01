@@ -50,6 +50,11 @@ export default function MainPage() {
     <option value="" >
     Select Source Currency
     </option>
+    {Object.keys(currencyNames).map((currency)=> (
+      <option className="p-1" key={currency} value ={currency}>
+        {currencyNames[currency]}
+      </option>
+    ))}
    </select>
   </div>
   <div className="mb-4">
@@ -58,11 +63,12 @@ export default function MainPage() {
     <option value="" >
     Select Target Currency
     </option>
-    {Object.keys(currencyNames).map((currecny) =>(
-      <option className = "p-1"> key = {currency} value={currecny}
-      {currencyNames[currency]};
+    {Object.keys(currencyNames).map((currency)=> (
+      <option className="p-1" key={currency} value ={currency}>
+        {currencyNames[currency]}
       </option>
     ))}
+
    </select>
   </div>
   <div className="mb-4">
@@ -70,7 +76,7 @@ export default function MainPage() {
     <input onChange = {(e) => setAmountInSourceCurrency(e.target.value)} type="number"  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"  required placeholder='Amount in source currency'  name={amountInSourceCurrency} id={amountInSourceCurrency} value={amountInSourceCurrency}/>
   </div>
   <button className='bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md'>
-    {""}Get the target currency</button>
+    Get the target currency</button>
         </form>
       </section>
     </div>

@@ -59,8 +59,8 @@ export default function MainPage() {
     Select Target Currency
     </option>
     {Object.keys(currencyNames).map((currecny) =>(
-      <option className = "p-1"> hey = {currency} value={currecny}
-      {currencyNames{currecny}}
+      <option className = "p-1"> key = {currency} value={currecny}
+      {currencyNames[currency]};
       </option>
     ))}
    </select>

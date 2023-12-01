@@ -14,9 +14,21 @@ export default function MainPage() {
   const [currencyNames, setCurrencyNames] = useState([]);
 
   //handleSubmit method
-  const handleSubmit = (e) => {
+  const handleSubmit = async  (e) => {
     e.preventDefault();
-    console.log(date, sourceCurrency, targetCurrency, amountInSourceCurrency);
+    try{
+      const response = await axios.get("http://localhost:5000/convert", {
+        params:{
+          date,
+          sourceCurrency,
+          targetCurrency,
+          amountInSourceCurrency,
+        },
+      });
+
+    }catch (err){
+      console.error(err);
+    }
   }
 
   //get all currencies list
